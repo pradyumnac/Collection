@@ -31,7 +31,7 @@ function getFolder(dir,filetypelist, recursive, progress) {
 			});
 		}
 		// console.log(filetypelist);
-		if((stat.isFile(fp)) && (filetypelist.indexOf(path.extname(fp))>-1)) {
+		else if((stat.isFile(fp)) && (filetypelist.indexOf(path.extname(fp))>-1)) {
 			//Only the file name iwthout nay extension
 			ext = path.extname(fp);
 			filename = path.basename(fp,ext)

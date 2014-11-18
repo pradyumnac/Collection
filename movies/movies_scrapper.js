@@ -34,23 +34,27 @@ function getFolder(dir,filetypelist, recursive) {
 		else if((stat.isFile(fp)) && (filetypelist.indexOf(path.extname(fp))>-1)) {
 			//Only the file name iwthout nay extension
 			ext = path.extname(fp);
-			filename = path.basename(fp,ext)
+			filename = path.basename(fp,ext);
+			dirname = path.dirname(fp);
 			
+			dirfilelist = fs.readdirSync(dirname);
 			//related files logic
 			//this helps in indexing opf , txt, info and jpg files corresponding to the book
-			// 1st part of the logic - extracts just the filename without extension, and filters with the name tp find other files with same name
+			// 1st part of the logic - only files in same folder
 			// 2nd part of the logic - excludes the currenlyt iterated file from the filter this ensures that files withh different extensions are only taken
-			related_fn  = filelist.filter(function(i){
-				return ((i.indexOf(filename)>-1) && (i != path.basename(fp)));
+			related_fn  = dirfilelist.filter(function(i){
+				return ((stat.isFile(i)) && (i != path.basename(fp)));
 			});
+			// ### in case of movies, the file name need not be the same as other related files in folder ###
 			// console.log(related_fn);
 			
 			collection.push({
 				'path':fp,
-				'dir':path.dirname(fp),
+				'dir':dirname,
 				'filename':filename,
 				'size':stat.size,
-				'type':path.extname(fp)
+				'type':ext,
+				'related':related_fn
 			});
 		}	
 	});
