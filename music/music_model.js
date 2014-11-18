@@ -9,8 +9,7 @@ var Musicchema = mongoose.Schema({
 	dir: String,
 	filename: String,
 	size: String,
-	type: String,
-	related: Array
+	type: String
 });
 
 var Music = mongoose.model('Music',Musicchema);

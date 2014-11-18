@@ -28,7 +28,8 @@ function bulk_update_music(songobjlist) {
 
 function add_to_db(fp,filetypelist, recursive){
 	files = get_music.get(fp,filetypelist, recursive);
-	
+	console.log("The following number of files were collected:");
+	console.log(files.length);
 	bulk_save_music(files);
  }
  
