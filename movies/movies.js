@@ -9,7 +9,7 @@ var movie = require('./movies_model');
 
 function bulk_save_movies(movieobjlist) {
 	movie.create(movieobjlist,function(err){
-		if((err)&&(err.code==11000)) {console.log("This document already exists, please use update db function",err)}
+		if((err)&&(err.code==11000)) {console.log("This document already exists, please use update db function")}
 		else if(err) {console.log(err);}
 		else {console.log("Success");}
 		mongoose.connection.close()

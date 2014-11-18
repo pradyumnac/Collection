@@ -9,7 +9,7 @@ var song = require('./music_model');
 
 function bulk_save_music(songobjlist) {
 	song.create(songobjlist,function(err){
-		if((err)&&(err.code==11000)) {console.log("This document already exists, please use update db function",err)}
+		if((err)&&(err.code==11000)) {console.log("This document already exists, please use update db function")}
 		else if(err) {console.log(err);}
 		else {console.log("Success");}
 		mongoose.connection.close()

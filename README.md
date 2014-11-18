@@ -1,6 +1,5 @@
 Collection
 ==========
-
 A desktop software for indexing and displaying media.
 
 
@@ -9,9 +8,12 @@ Features
 the following media types are supported:
 * Music (mp3, m4a, aac, wav, wma)
 * Ebooks (epub, mobi, pdf)
+	* Related files are based on name of files. 
+	* This includes other versions of the ebook,opf and cover images)
 * Movies (avi, dat, divx, wmv)
+	* Related files are based on folder files
 
-Its very easy to add a file format to supoort in code
+Its very easy to add a file format to be supported from code end
 
 Technology:
 ============
