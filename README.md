@@ -35,4 +35,4 @@ Todo:
 
 Future:
 =========
-Planning for a full desktop software with node webkit inteface. The applicate can be bundles and used on multiple platforms
+Planning for a full desktop software with node-webkit inteface. The application can be bundled and used on multiple platforms
