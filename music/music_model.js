@@ -3,9 +3,7 @@ var mongoose = require('mongoose');
 var Musicschema = mongoose.Schema({
 	path: {
 		type: String,
-		unique: 'True',
-		index: 'True',
-		trim: 'True'
+		unique: true
 	},
 	dir: String,
 	filename: String,
@@ -14,5 +12,5 @@ var Musicschema = mongoose.Schema({
 });
 
 var Music = mongoose.model('Music',Musicschema);
-
+Music.ensureIndexes();
 module.exports = Music;

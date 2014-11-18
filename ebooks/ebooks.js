@@ -28,7 +28,8 @@ function bulk_update_ebooks(bookobjlist) {
 
 function add_to_db(fp,filetypelist, recursive){
 	files = get_ebooks.get(fp,filetypelist, recursive);
-	
+	console.log("The following number of files were collected:");
+	console.log(files.length);
 	bulk_save_ebooks(files);
  }
  
