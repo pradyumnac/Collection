@@ -1,10 +1,11 @@
 var mongoose = require('mongoose');
 
-var Musicchema = mongoose.Schema({
+var Musicschema = mongoose.Schema({
 	path: {
 		type: String,
 		unique: 'True',
-		index: 'True'
+		index: 'True',
+		trim: 'True'
 	},
 	dir: String,
 	filename: String,
@@ -12,9 +13,6 @@ var Musicchema = mongoose.Schema({
 	type: String
 });
 
-var Music = mongoose.model('Music',Musicchema);
-// var Music = mongoose.model('Music');
-// var a = new Music ({'path':'123'});
-// console.log( a);
+var Music = mongoose.model('Music',Musicschema);
 
 module.exports = Music;

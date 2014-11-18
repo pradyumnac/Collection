@@ -6,20 +6,21 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/music');
 
 var get_music = require('./music_scrapper');
-var Esong = require('./music_model');
+var song = require('./music_model');
 
 function bulk_save_music(songobjlist) {
-	Esong.create(songobjlist,function(err){
-		if((err)&&(err.code==11000)) {console.log("This collection already exists, please use update db function")}
+	song.create(songobjlist,function(err){
+		if((err)&&(err.code==11000)) {console.log("This document already exists, please use update db function")}
 		else if(err) {console.log(err);}
 		else {console.log("Success");}
 		mongoose.connection.close()
 	});	
+	
 }
 
 function bulk_update_music(songobjlist) {
-	Esong.create(songobjlist,function(err){
-		if((err)&&(err.code==11000)) {console.log("This collection already exists, please use update db function")}
+	song.create(songobjlist,function(err){
+		if((err)&&(err.code==11000)) {console.log("This document already exists, please use update db function")}
 		else if(err) {console.log(err);}
 		else {console.log("Success");}
 		mongoose.connection.close()
