@@ -21,8 +21,8 @@ function getFolder(dir,filetypelist, recursive, progress) {
 		catch(err) {
 			// console.log('Error getting file stats');
 			console.log(err);
-			return; //ignore error for thsi isnstance and continue
-		}
+			return; //ignore error for this instance and continue
+		}	
 		
 		if(recursive && stat.isDirectory()){
 			sub = getFolder(fp, filetypelist, recursive);

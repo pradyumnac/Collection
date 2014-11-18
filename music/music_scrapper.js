@@ -50,8 +50,7 @@ function getFolder(dir,filetypelist, recursive) {
 				'dir':path.dirname(fp),
 				'filename':filename,
 				'size':stat.size,
-				'type':path.extname(fp),
-				'related':related_fn
+				'type':path.extname(fp)
 			});
 		}	
 	});
