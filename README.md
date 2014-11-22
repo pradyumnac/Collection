@@ -26,10 +26,12 @@ Current milestone:
 Grabs following data and store in mongoDB database:
 * Music
 * Ebooks
+* Movies
+Display these media over a webserver
 
 Todo:
 ===============
-* Movie collection organiser
+* Intigrate web server into a single node-webkit app
 * Movie information/reviews through IMDB, rotten tomatoes
 * Parse OPFs for ebooks
 * Ebook infomation/reviews through goodreads
