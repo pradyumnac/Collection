@@ -8,7 +8,7 @@
         span.icon-bar
       a.navbar-brand(href='/')
         span.ion-cube
-        | Project name
+        | CollectionWeb
     .collapse.navbar-collapse
       ul.nav.navbar-nav
         li(class=title=='Home'?'active':undefined)
@@ -17,6 +17,29 @@
           a(href='/api') API Examples
         li(class=title=='Contact'?'active':undefined)
           a(href='/contact') Contact
+        li.dropdown(class=title=='Media'?'active':undefined)
+            a.dropdown-toggle(href='#', data-toggle='dropdown')
+              span.ion-navicon
+              |Media&nbsp;
+              i.caret
+            ul.dropdown-menu
+              li
+                a(href='/media/ebooks')
+                  span.ion-lightbulb
+                  | Ebooks
+              li
+                a(href='/media/movies')
+                  span.ion-planet
+                  | Movies
+              li
+                a(href='/media/music')
+                  span.ion-music-note
+                  | Music
+              li.divider
+              li
+                a(href='/media/admin')
+                  span.ion-person
+                  |  Admin
       ul.nav.navbar-nav.navbar-right
         if !user
           li(class=title=='Login'?'active':undefined)

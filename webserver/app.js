@@ -26,6 +26,7 @@ var connectAssets = require('connect-assets');
  */
 
 var homeController = require('./controllers/home');
+var mediaController = require('./controllers/media');
 var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
@@ -200,6 +201,18 @@ app.get('/auth/venmo', passport.authorize('venmo', { scope: 'make_payments acces
 app.get('/auth/venmo/callback', passport.authorize('venmo', { failureRedirect: '/api' }), function(req, res) {
   res.redirect('/api/venmo');
 });
+
+/**
+ * Media Collection browser specific routes
+ */
+app.get('/media/ebooks', mediaController.ebooks);
+app.get('/media/movies', mediaController.movies);
+app.get('/media/music', mediaController.music);
+app.get('/media/admin', mediaController.admin);
+app.get('/media', mediaController.index);
+
+ 
+
 
 /**
  * 500 Error Handler.
