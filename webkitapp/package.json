@@ -1,0 +1,16 @@
+{
+  "name": "Collection",
+  "description": "A local media collection aggregator",
+  "version": "0.1",
+  "main": "index.html",
+  "window": {
+    "show": false,
+    "toolbar": false,
+    "frame": false,
+    "position": "center",
+    "width": 600,
+    "height": 600,
+    "min_width": 220,
+    "min_height": 220
+  }
+}
