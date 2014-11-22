@@ -1,8 +1,9 @@
 /* Controller file for music collection manager */
 
 var mongoose = require('mongoose');
+var db_url = 'mongodb://localhost:27017/Web';
 
-mongoose.connect('mongodb://localhost:27017/music');
+mongoose.connect(db_url);
 
 var get_music = require('./music_scrapper');
 var song = require('./music_model');

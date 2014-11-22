@@ -1,9 +1,9 @@
 /* Controller file for ebooks collection manager */
 
 var mongoose = require('mongoose');
-// var status = require('node-status')
+var db_url = 'mongodb://localhost:27017/Web';
 
-mongoose.connect('mongodb://localhost:27017/ebooks');
+mongoose.connect(db_url);
 
 var get_ebooks = require('./ebooks_scrapper');
 var Ebook = require('./ebook_model');

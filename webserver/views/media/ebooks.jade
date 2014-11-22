@@ -1,27 +1,21 @@
 extends ../layout
 
+
 block content
+  include ../mixins/prettyByte
+
   h1 Ebooks Gallery
   p.lead Dashboard for media applications
+  
   hr
   .row
-    .col-sm-6
-      h2 Ebooks
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-default(href='/media/books', role='button') Open Ebooks »
-    .col-sm-6
-      h2 Movies
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-default(href='/media/movies', role='button') View Movies »
-    .col-sm-6
-      h2 Music
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-default(href='/media/music', role='button') Play music »
-    .col-sm-6
-      h2 Admin
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-default(href='/media/admin', role='button') Go to Admin »
+  each val in mediadata 
+        .col-sm-4
+          if val.image
+            img(src='/media/ebooks/image?id=' + val.id)
+          h4= val.filename
+          p= val.type
+          +prettyByte(val.size)
+          p
+            a.btn.btn-default(href='/media/ebooks/download?id=' + val.id, role='button') Open Ebooks »
+    

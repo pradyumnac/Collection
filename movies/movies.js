@@ -1,8 +1,9 @@
 /* Controller file for movies collection manager */
 
 var mongoose = require('mongoose');
+var db_url = 'mongodb://localhost:27017/Web';
 
-mongoose.connect('mongodb://localhost:27017/movies');
+mongoose.connect(db_url);
 
 var get_movies = require('./movies_scrapper');
 var movie = require('./movies_model');
