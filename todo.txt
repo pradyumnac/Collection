@@ -1,1 +1,21 @@
-* Prevent duplicate entries in Db -- done
+Parser
+* Ability to run update multiple times without unique validdation getting triggered
+* intelligent naming from filename (cleanup)
+* grabbing data from thrid party websites
+	* goodreads
+	* imdb
+	* Music sites incluing Youtube
+* enable image attribute setting 
+* ID3 parser for music
+* OPF parser
+* Prevent duplicate entries in Db -- done\
+
+Server
+
+* pretty layout for displaying content
+* enable screenshot server
+* Ability to stream music/movies/ebooks
+* admin interface to correct data
+
+Futuristic
+* Dropbox/box/google drive integration
