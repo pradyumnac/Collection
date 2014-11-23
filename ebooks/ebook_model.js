@@ -7,15 +7,19 @@ var bookschema = mongoose.Schema({
 	},
 	dir: String,
 	filename: String,
+	name: String,
+	image: String,
 	size: String,
 	type: String,
 	related: Array
 });
-/* 
+
+/*
 bookschema.pre('save', function(next) {
   var user = this;
   console.log("1");
- 
+  
+  
   //query for duplicate data, drop if any
   mongoose.models['Books'].findOne({path : this.path}, 'path', function(err, results) {
         if(err) {
@@ -28,6 +32,7 @@ bookschema.pre('save', function(next) {
             next();
         }
     });
+    
 });
 */
 
